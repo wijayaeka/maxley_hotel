@@ -1,0 +1,134 @@
+
+
+/* GALLERY CSS
+	Eka Purnama Wijaya
+ */
+ #scroll{
+		margin-left:0px; 
+		margin-top:30px; 
+		overflow:scroll;
+		height:400px;
+		width:100%; 
+		background:white;
+		border:1px solid #ddd;
+		
+	}
+#table_edit_image{
+						width:60%;
+						border-collapse: collapse;
+					}
+#table_edit_image td{
+				 border:none;
+				  background-color: white;
+				  border:0px solid;
+				  padding-top:10px;
+				}
+#upload_form{
+				border:1px solid #666666;
+				padding:5px 5px;
+			}
+#upload_form legend{
+					border:1px solid #666666;
+					padding:5px 5px;
+	
+				}
+.box {
+		 border:1px solid #ddd;
+		 border-radius:3px 3px;
+		 top:0px;
+			padding: 5px 5px;
+		}
+
+.box, .box img {
+  position:relative;
+  width:160px;
+  height:150px;
+  
+}
+#apply_album_photo {
+				padding:5px 5px;
+				float:right;
+					}
+.delete_photo{
+  display:none;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:15px;
+  height:15px;
+  background:url('../images/close.png') no-repeat white;
+   border-radius:4px 4px;
+}
+
+.box:hover .delete_photo{
+  display:block;
+}
+.delete_photo:hover {
+  background-image:url('../images/close.png')  no-repeat ;
+}
+
+
+.delete_video{
+  display:none;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:15px;
+  height:15px;
+  background:url('../images/close.png') no-repeat white;
+   border-radius:4px 4px;
+}
+
+.box:hover .delete_video{
+  display:block;
+}
+.delete_video:hover {
+  background-image:url('../images/close.png')  no-repeat ;
+}
+
+.box_video {
+		 border:1px solid #ddd;
+		 border-radius:3px 3px;
+		 top:0px;
+		
+		}
+
+.box_video, .box source {
+  position:relative;
+  width:200px;
+  height:160px;
+  padding:10px 10px;
+}
+
+.box_video:hover .delete_video{
+  display:block;
+}
+.delete_video:hover {
+  background-image:url('../images/close.png')  no-repeat ;
+}
+
+
+.delete_video{
+  display:none;
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:15px;
+  height:15px;
+  background:url('../images/close.png') no-repeat white;
+   border-radius:4px 4px;
+}
+
+.box_video:hover .delete_video{
+  display:block;
+}
+.delete_video:hover {
+  background-image:url('../images/close.png')  no-repeat ;
+}
+/* PROGRESS Upload Video
+	Eka Purnama Wijaya
+*/
+
+.progress { position:relative; margin-top: 30px;  width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:3px; left:48%; }

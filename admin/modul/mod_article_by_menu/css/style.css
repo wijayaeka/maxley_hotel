@@ -1,0 +1,137 @@
+
+.css-treeview ul,.css-treeview li
+{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+	position:relative;
+	height:auto;
+}
+ 
+.css-treeview input
+{
+    position: absolute;
+    opacity: 0;
+}
+ 
+.css-treeview
+{
+    font: normal 11px "Segoe UI", Arial, Sans-serif;
+	min-height: 200px;
+	height: auto;
+}
+ 
+.css-treeview a
+{
+    color: #00f;
+    text-decoration: none;
+}
+ 
+.css-treeview a:hover
+{
+    text-decoration: underline;
+}
+ 
+.css-treeview input + label + ul
+{
+    margin: 0 0 0 22px;
+}
+ 
+.css-treeview input ~ ul
+{
+    display: none;
+}
+ 
+.info, .success, .warning, .error, .validation {
+    border: 1px solid;
+    margin: 10px 0px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+#inline{
+display:none;
+}
+
+#loading {
+padding: 10px 10px;
+width:20px;
+height:20px;
+margin-left:-10px;
+}
+.info {
+	display:none;
+    color: #00529B;
+    background-color: #BDE5F8;
+    background-image: url('../images/info.png');
+}
+.success {
+	display:none;
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    background-image:url('../images/success.png');
+}
+.warning {
+	display:inline-block;
+	width:170px;
+    color: #9F6000;
+    background-color: #FEEFB3;
+    background-image: url('../images/warning.png');
+}
+.error {
+	display:inline-block;
+	width:170px;
+    color: #D8000C;
+    background-color: #FFBABA;
+    background-image: url('../images/error.png');
+}
+#tool{
+		display:none;
+		}
+#toolTip {
+    position:relative;
+	display:inline-block;
+	width:150px;
+    color: #215d7a;
+    background-color: #9de3f1;
+    background-image: url('../images/info.png') ;
+	border: 1px solid;
+	left:100px;
+	top:-17px;
+    padding:15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+#tailShadow {
+    position:absolute;
+    bottom:-8px;
+    left:28px;
+    width:0;height:0;
+    border: 1px solid ;
+}
+#apply{
+		display:block;
+		right:0px;
+		float:right;
+		margin-top:-10px;
+		}
+#tail1 {
+    position:absolute;
+    bottom:-20px;
+    left:20px;
+    width:0;height:0;
+    border-color:#215d7a transparent transparent transparent;
+    border-width:10px;
+    border-style:solid ;
+}
+
+#tail2 {
+    position:absolute;
+    bottom:-18px;
+    left:20px;
+    width:0;height:0;
+    border-color:#9de3f1 transparent transparent transparent;
+    border-width:10px;
+    border-style:solid;
+}

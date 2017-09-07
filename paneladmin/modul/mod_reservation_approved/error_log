@@ -1,0 +1,2 @@
+[21-May-2014 12:52:06 Asia/Jakarta] PHP Notice:  Undefined index: id_service in /home/maxlacom/public_html/maxleyhotel.com/maxley_admin/modul/mod_reservation_approved/aksi_reservation_approved.php on line 54
+[21-May-2014 12:52:06 Asia/Jakarta] PHP Notice:  Undefined variable: sql in /home/maxlacom/public_html/maxleyhotel.com/maxley_admin/modul/mod_reservation_approved/aksi_reservation_approved.php on line 61

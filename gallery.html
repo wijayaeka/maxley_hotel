@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+
+<html class="not-ie" lang="en">
+<!--<![endif]-->
+    
+<head>
+<meta charset="utf-8">
+<meta name="description" content="description" />
+<meta name="keywords" content="keywords"/>
+<meta name="author" content="BRKOR" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>Audiofolio</title>
+
+<link rel="shortcut icon" href="images/icon.ico">
+
+<!-- google web font-->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    
+<!-- style sheets-->
+<link rel="stylesheet" media="screen" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" media="screen" href="css/custom.css" type="text/css"/>
+<link rel="stylesheet" media="screen" href="css/audioplayer.css" type="text/css"/>
+
+<!-- main jquery libraries / others are at the bottom-->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/modernizr.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<!-- Menu -->
+<nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="glyphicon glyphicon-list"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="logo.png" class="logo" alt=""><strong>Audiofolio</strong> Music Site Template</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="shows.html">Shows</a></li>
+                    <li><a href="music.html">Music</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li class="active"><a href="gallery.html">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div><!-- end navbar-collapse -->
+        </div>
+    </div>
+</nav>
+<!-- end Menu -->
+    
+<!-- Player -->
+<div class="player">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <audio preload="auto" controls>
+                    <source src="audio.mp3" />
+                </audio>
+            </div>
+            <div class="col-xs-5">
+                <p>
+                    1. Quisque ultrices - Interdum et malesuada
+                </p>
+            </div>
+            <div class="col-xs-1">
+                <a href="#" class="btn-playlist pull-right" data-toggle="tooltip" data-placement="top" title="" data-original-title="Playlist on/off"><span class="glyphicon glyphicon-list"></span></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Player -->
+    
+<!-- Playlist -->
+<div id="playlist" class="player">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <audio preload="auto" controls>
+                    <source src="audio.mp3" />
+                </audio>
+            </div>
+            <div class="col-xs-6">
+                <p>
+                    2. Pellentesque - Donec vitae
+                </p>
+            </div>
+            <div class="col-xs-6">
+                <audio preload="auto" controls>
+                    <source src="audio.mp3" />
+                </audio>
+            </div>
+            <div class="col-xs-6">
+                <p>
+                    3. Suspendisse aliquam - Fusce pretium
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Playlist-->
+
+<!-- Content -->
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-header">
+                    <h4><strong>Gallery</strong> \ Our photos<span class="glyphicon glyphicon-eye-open pull-right"></span></h4>
+                    <hr class="hr2">
+                </div>    
+            </div>
+            <div class="col-sm-12">
+                <div id="filters">
+                    <a class="btn btn-link active" data-filter="*">Show all</a>
+                    <a class="btn btn-link" data-filter=".one">Photos from Melbourne Tour 2014</a>
+                    <a class="btn btn-link" data-filter=".two">Photos from London Tour 2014</a>
+                    <a class="btn btn-link" data-filter=".three">Behind scenes photos</a>
+                </div>
+            </div>
+        </div>
+        <div id="container" class="row">
+            <div class="item one col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal1"><div class="view"><img src="images/1.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>Melbourne Tour 2014 - description</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item two col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal2"><div class="view"><img src="images/2.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>London Tour 2014 - description</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item three col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal3"><div class="view"><img src="images/3.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>Behind scenes - description</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item one col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal4"><div class="view"><img src="images/4.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>Melbourne Tour 2014 - description</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item two col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal5"><div class="view"><img src="images/5.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>London Tour 2014 - description</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item three col-sm-4">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="#modal6"><div class="view"><img src="images/6.jpg" alt=""><span class="zoom"></span></div></a><!-- image zoom --> 
+                    <div class="box-header">
+                        <small><span class="glyphicon glyphicon-eye-open"></span>Behind scenes - description</small>
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </div>
+</div>
+<!-- end Content -->
+    
+<!-- Modal -->
+<div id="modal1" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/1.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal2" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/2.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal3" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal3" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal4" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal4" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal5" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal5" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/5.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="modal6" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal6" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <a href="#" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Close</a>
+                <div class="box">
+                    <img src="images/6.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Modal -->
+
+<!-- Up -->
+<div class="up">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <p class="text-center">
+                    <span class="glyphicon glyphicon-chevron-up"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end Up -->
+    
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">
+                <p>&copy; BRKOR 2014<br><small>Audiofolio . Music Site Template</small></p>
+            </div>
+            <div class="col-xs-6">
+                <span class="pull-right">
+                    <a href="#" class="share"></a>
+                    <a href="#" class="behance"></a>
+                    <a href="#" class="gplus"></a>
+                    <a href="#" class="skype"></a>
+                    <a href="#" class="tumblr"></a>
+                    <a href="#" class="pinterest"></a>
+                    <a href="#" class="twitter"></a>
+                    <a href="#" class="facebook"></a>
+                    <a href="#" class="youtube"></a>
+                    <a href="#" class="vimeo"></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end Footer -->
+    
+    
+
+<!-- Java Script -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/bootstrap.min.js"></script>
+    
+<!-- Audio Player -->  
+<script src="js/audioplayer.js"></script>
+
+<!-- Scripts -->  
+<script src="js/scripts.js"></script>
+    
+<!-- Isotope -->
+<script src="js/isotope.js"></script>
+<script src="js/isotope-scripts.js"></script>
+
+
+</body>
+</html>

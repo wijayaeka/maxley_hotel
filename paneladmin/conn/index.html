@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="./src/online.js"></script>
+        <title>OnlineJS demo page</title>
+    </head>
+    <body style="font-family: Arial">
+        <div style="float:left; position: relative;">
+            <img id="red_light" src="./img/traffic_red.png" style="opacity:0;">
+            <img id="green_light" src="./img/traffic_green.png" style="position: absolute; left: 0px; top: 0px;">
+        </div>
+        <div style="float:left; margin-left: 40px;">
+            <h1 id="online_title">Checking online presence</h1>
+            
+        </div>
+        <script>
+            var greenLight = document.getElementById('green_light');
+            var redLight = document.getElementById('red_light');
+
+            window.onLineHandler = function(){
+                greenLight.style.opacity = 1;
+                redLight.style.opacity = 0;
+                document.getElementById('online_title').innerHTML = 'YOU ARE ONLINE';
+            };
+            window.offLineHandler = function(){
+                greenLight.style.opacity = 0;
+                redLight.style.opacity = 1;
+                document.getElementById('online_title').innerHTML = 'YOU ARE OFFLINE';
+            };
+        </script>
+    </body>
+</html>

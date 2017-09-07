@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteRule ^$ media.php?page=home [L]
+RewriteRule ^page-(.*)\.html$ media.php?page=page&id=$1 [L]
+RewriteRule ^single-(.*)\.html$ media.php?page=single&id=$1 [L]
+RewriteRule ^blog-(.*)\.html$ media.php?page=blog&id=$1 [L]
+RewriteRule ^promo-(.*)\.html$ media.php?page=promo&id=$1 [L]
+RewriteRule ^(.*)\.html$ media.php?page=$1 [L]
+Options All -Indexes
+</IfModule>

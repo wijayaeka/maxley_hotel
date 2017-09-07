@@ -1,0 +1,438 @@
+<!--Tree Menu-->
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#navigation").treeview({
+		persist: "location",
+		collapsed: true,
+		unique: true
+	});
+});
+</script>
+
+<!--Get ID FOrm Popup-->
+<script>	
+//SM1
+function sm1(intValue){			
+	$('#id_loginmodal').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm1.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM2
+function sm2(intValue){			
+	$('#id_loginmodal2').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm2.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM3
+function sm3(intValue){			
+	$('#id_loginmodal3').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm3.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM3a
+function sm3a(intValue){			
+	$('#id_loginmodal3a').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm3a.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM4
+function sm4(intValue){			
+	$('#id_loginmodal4').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm4.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM5
+function sm5(intValue){			
+	$('#id_loginmodal5').val(intValue);
+	var id = +intValue;
+	$.ajax({
+        type: "GET",
+        url: "act/pop_form_sm5.php",
+        data:"id="+id,
+        success: function() {
+            alert("Request Berhasil Dikirim");
+        }
+    });
+    return true;
+}
+
+//SM6
+function sm6(intValue)
+{
+			var string = 'id='+ intValue ;
+			$.ajax({
+			   type: "GET",
+			   url: "pop_form_sm6.php",
+			   data: string,
+			   cache: false,
+			   success: function(){
+			  }
+			 });
+			return true;		
+}
+//SM7
+function sm7(intValue)
+{
+			var string = 'id='+ intValue ;
+			$.ajax({
+			   type: "GET",
+			   url: "pop_form_sm7.php",
+			   data: string,
+			   cache: false,
+			   success: function(){
+			  }
+			 });
+			return true;		
+}
+//SM8
+function sm8(intValue)
+{
+			var string = 'id='+ intValue ;
+			$.ajax({
+			   type: "GET",
+			   url: "pop_form_sm8.php",
+			   data: string,
+			   cache: false,
+			   success: function(){
+			  }
+			 });
+			return true;		
+}
+</script>	
+
+<?php
+include "../config/connect.php";
+?>
+	
+	<script>
+	$(function () {
+                                     
+$('#simpan').click(function (){
+    var nama = $('#nama').val();
+    alert(nama);
+     
+        $.ajax({
+        type: "Get",
+        url: "act/proses.php",
+        data:"nama="+nama,
+        success: function(data) {
+            alert("Request Berhasil Dikirim");
+                                $("#nama").val("");
+        },
+        error: function(jqXHR, status, error) {
+             
+             alert("Request Anda Gagal Dikirim  ");
+              
+        }
+    });
+    return false;
+	});       
+});
+</script>
+
+	<ul id="navigation">
+	<li>
+		<div><a href="#">HomeM<a/></div>
+	</li>
+	<?php
+		$menu=mysql_query("SELECT * FROM menu WHERE menu_stats='mm'");
+		while($r1=mysql_fetch_array($menu)){
+			echo "<li class='open' ><a href=http://google.com >$r1[menu_name]</a>";
+			
+			//sub1
+			$menu2=mysql_query("SELECT * FROM menu 
+								WHERE menu_stats='sm1' AND id_parent=$r1[id_menu]");
+			$cnt1=mysql_num_rows($menu2);
+			if($cnt1 > 0){
+				echo"<ul>";
+				while ($r2=mysql_fetch_array($menu2)){
+					echo"<li class='open'><a href=# >$r2[menu_name]</a>";
+					
+					//sub2
+					$menu3=mysql_query("SELECT * FROM menu 
+								WHERE menu_stats='sm2' AND id_parent=$r2[id_menu]");
+					$cnt2=mysql_num_rows($menu3);
+					if($cnt2 > 0){
+						echo"<ul>";
+						while ($r3=mysql_fetch_array($menu3)){
+							echo"<li class='open'><a href=http://swm.com >ww$r3[menu_name]</a>";
+							
+							
+								//sub3
+							$menu3a=mysql_query("SELECT * FROM menu 
+								WHERE menu_stats='sm3' AND id_parent=$r3[id_menu]");
+							$cnt3=mysql_num_rows($menu3a);
+							if($cnt3 > 0){
+								echo"<ul>";
+								while ($r3a=mysql_fetch_array($menu3a)){
+									echo"<li class='open'><a href=# >$r3a[menu_name]</a>";
+									
+									
+									//sub4
+									$menu4=mysql_query("SELECT * FROM menu 
+										WHERE menu_stats='sm3a' AND id_parent=$r3a[id_menu]");
+									$cnt4=mysql_num_rows($menu4);
+									if($cnt4 > 0){
+										echo"<ul>";
+										while ($r4=mysql_fetch_array($menu4)){
+											echo"<li class='open'><a href=# >$r4[menu_name]</a>";	
+							
+											//sub5
+											$menu5=mysql_query("SELECT * FROM menu 
+												WHERE menu_stats='sm4' AND id_parent=$r4[id_menu]");
+											$cnt5=mysql_num_rows($menu5);
+											if($cnt5 > 0){
+												echo"<ul>";
+												while ($r5=mysql_fetch_array($menu5)){
+													echo"<li class='open'><a href=# >$r5[menu_name]</a>";	
+													
+													//sub6
+													$menu6=mysql_query("SELECT * FROM menu 
+														WHERE menu_stats='sm5' AND id_parent=$r5[id_menu]");
+													$cnt6=mysql_num_rows($menu6);
+													if($cnt6 > 0){
+														echo"<ul>";
+														while ($r6=mysql_fetch_array($menu6)){
+															echo"<li class='open'><a href=# >$r6[menu_name]</a>";
+
+															//sub7
+															$menu7=mysql_query("SELECT * FROM menu 
+																WHERE menu_stats='sm6' AND id_parent=$r6[id_menu]");
+															$cnt7=mysql_num_rows($menu7);
+															if($cnt7 > 0){
+																echo"<ul>";
+																while ($r7=mysql_fetch_array($menu7)){
+																	echo"<li class='open'><a href=# >$r7[menu_name]</a>";	
+																	
+																	//sub8
+																	$menu8=mysql_query("SELECT * FROM menu 
+																		WHERE menu_stats='sm7' AND id_parent=$r7[id_menu]");
+																	$cnt8=mysql_num_rows($menu8);
+																	if($cnt8 > 0){
+																		echo"<ul>";
+																		while ($r8=mysql_fetch_array($menu8)){
+																			echo"<li class='open'><a href=#>$r8[menu_name]</a>";	
+																			
+																			
+																			//sub9
+																			$menu9=mysql_query("SELECT * FROM menu 
+																				WHERE menu_stats='sm8' AND id_parent=$r8[id_menu]");
+																			$cnt9=mysql_num_rows($menu9);
+																			if($cnt9 > 0){
+																				echo"<ul>";
+																				while ($r9=mysql_fetch_array($menu9)){
+																					echo"<li class='open'><a href=#>$r9[menu_name]</a></li>";	
+							
+																				}
+																				$sbm8= $r8[id_menu];
+																				echo"<li><a href='#login-box8' onclick='sm8($sbm8)' class='login-window' id='tip3'>
+																					<img src='images/icon_edit/add9.png'/>
+																					<span> Click for Add Submenu from this Parent</span>
+																				</a></li>";
+																			//end sub8
+																				echo "</ul>
+																				</li>";
+																			}
+																			
+																			else{
+																				$sbm8= $r8[id_menu];
+																				echo"<ul><li><a href='#login-box8' onclick='sm8($sbm8)' class='login-window' id='tip3'>
+																					<img src='images/icon_edit/add9.png'/>
+																					<span> Click for Add Submenu from this Parent</span>
+																					</a></li></ul></li>";
+																			}
+																		}
+																		$sbm7= $r7[id_menu];
+																		echo"<li><a href='#login-box7' onclick='sm7($sbm7)' class='login-window' id='tip3'>
+																					<img src='images/icon_edit/add8.png'/>
+																					<span> Click for Add Submenu from this Parent</span>
+																				</a></li>";
+																		//end sub8
+																		echo "</ul>
+																		</li>";
+																	}
+																	else{
+																		$sbm7= $r7[id_menu];
+																		echo"<ul><li><a href='#login-box7' onclick='sm7($sbm7)' class='login-window' id='tip3'>
+																		<img src='images/icon_edit/add8.png'/>
+																		<span> Click for Add Submenu from this Parent</span>
+																		</a></li></ul></li>";
+																	}
+																	
+																}
+																$sbm6= $r6[id_menu];
+																echo"<li><a href='#login-box6' onclick='sm6($sbm6)' class='login-window' id='tip3'>
+																<img src='images/icon_edit/add7.png'/>
+																<span> Click for Add Submenu from this Parent</span>
+																</a></li>";
+																//end sub7
+																echo "</ul>
+															</li>";
+															}
+															else{
+																$sbm6= $r6[id_menu];
+																echo"<ul><li><a href='#login-box6' onclick='sm6($sbm6)' class='login-window' id='tip3'>
+																<img src='images/icon_edit/add7.png'/>
+																<span> Click for Add Submenu from this Parent</span>
+																</a></li></ul></li>";
+															}
+														
+														}
+														$sbm5= $r5[id_menu];
+														echo"<li><a href='#login-box5' onclick='sm5($sbm5)' class='login-window' id='tip3'>
+														<img src='images/icon_edit/add6.png'/>
+														<span> Click for Add Submenu from this Parent</span>
+														</a></li>";
+													//end sub6
+														echo "</ul>
+														</li>";
+													}
+													else{
+														$sbm5= $r5[id_menu];
+														echo"<ul><li><a href='#login-box5' onclick='sm5($sbm5)' class='login-window' id='tip3'>
+														<img src='images/icon_edit/add6.png'/>
+														<span> Click for Add Submenu from this Parent</span>
+														</a></li></ul></li>";
+													}
+																				
+												}
+												$sbm4= $r4[id_menu];
+												echo"<li><a href='#login-box4' onclick='sm4($sbm4)' class='login-window' id='tip3'>
+												<img src='images/icon_edit/add5.png'/>
+												<span> Click for Add Submenu from this Parent</span>
+												</a></li>";
+												//end sub5
+												echo "</ul>
+											</li>";
+											}
+											else{
+												$sbm4= $r4[id_menu];
+												echo"<ul><li><a href='#login-box4' onclick='sm4($sbm4)' class='login-window' id='tip3'>
+												<img src='images/icon_edit/add5.png'/>
+												<span> Click for Add Submenu from this Parent</span>
+												</a></li></ul></li>";
+											}
+											
+										}
+										$sbm3a= $r3a[id_menu];
+										echo"<li><a href='#login-box3a' onclick='sm3a($sbm3a)' class='login-window' id='tip3'>
+										<img src='images/icon_edit/add4.png'/>
+										<span> Click for Add Submenu from this Parent</span>
+										</a></li>";
+										//end sub4
+										echo "</ul>
+										</li>";
+									}
+									else{
+										$sbm3a= $r3a[id_menu];
+										echo"<ul><li><a href='#login-box3a' onclick='sm4($sbm3a)' class='login-window' id='tip3'>
+										<img src='images/icon_edit/add4.png'/>
+										<span> Click for Add Submenu from this Parent</span>
+										</a></li></ul></li>";
+									}
+
+								}
+								$sbm3= $r3[id_menu];
+								echo"<li><a href='#login-box3' onclick='sm3($sbm3)' class='login-window' id='tip3'>
+								<img src='images/icon_edit/add3.png'/>
+								<span> Click for Add Submenu from this Parent</span>
+								</a></li>";
+								//end sub3
+								echo "</ul>
+								</li>";
+							}
+							else{
+								$sbm3= $r3[id_menu];
+								echo"<ul><li><a href='#login-box3' onclick='sm3($sbm3)' class='login-window' id='tip3'>
+								<img src='images/icon_edit/add3.png'/>
+								<span> Click for Add Submenu from this Parent</span>
+								</a></li></ul></li>";
+							}
+					
+						}
+					$sbm2= $r2[id_menu];
+					echo"<li><a href='#login-box2' onclick='sm2($sbm2)' class='login-window' id='tip3'>
+					<img src='images/icon_edit/add2.png'/>
+					<span> Click for Add Submenu from this Parent</span>
+					</a></li>";
+					//end sub2
+					echo "</ul>
+					</li>";
+					}
+					else{
+						$sbm2= $r2[id_menu];
+						echo"<ul><li><a href='#login-box2' onclick='sm2($sbm2)' class='login-window' id='tip3'>
+						<img src='images/icon_edit/add2.png'/>
+						<span> Click for Add Submenu from this Parent</span>
+						</a></li></ul></li>";
+					}
+	
+				}
+				$sbm1= $r1[id_menu];
+				echo"<li><a href='#login-box1' onclick='sm1($sbm1)' class='login-window' id='tip3'>
+				<img src='images/icon_edit/add1.png'/>
+				</a></li>";
+				//End sub1
+				echo "</ul>
+				</li>";
+				
+			}
+			else{
+				$sbm1= $r1[id_menu];
+				echo"<ul><li><a href='#login-box1' onclick='sm1($sbm1)' class='login-window' id='tip3'>
+				<img src='images/icon_edit/add1.png'/>
+				</a></li></ul></li>";
+			}
+		}
+		echo "<div class='post'>
+        	<div class='btn-sign'>
+				<a href='#login-box' class='login-window'><img src='images/icon_edit/add.png' class='add_menu_b' title='Add Menu' alt='Add Menu'/></a>
+        	</div>
+		</div>"; 		
+	?>
+</ul>
