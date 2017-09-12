@@ -1,6 +1,6 @@
 <?php
 require_once('../../report_pdf/templates/cetak_template.php');
-
+error_reporting(0);
 // Extend the TCPDF class to create custom Header and Footer
 class CetakPDF extends SMEP_PDF {	
 	public function CetakPDF (){

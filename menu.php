@@ -37,7 +37,7 @@
 									}
 				/*=======================================================================================*/
 								// SUB MENU 1
-									$cek_submenu1=mysql_query("SELECT * FROM menu WHERE menu_stats='sm1' AND id_parent=$menu[id_menu] ORDER BY list_number asc");
+									$cek_submenu1=mysql_query("SELECT * FROM menu WHERE menu_stats='sm1' AND id_parent= '$menu[id_menu]' ORDER BY list_number asc");
 									$cek_banyaknya_submenu1=mysql_num_rows($cek_submenu1);	
 										if($cek_banyaknya_submenu1 > 0)
 											{
@@ -69,7 +69,7 @@
 																	$cek_banyaknya_submenu2=mysql_num_rows($cek_submenu2);	
 															if($cek_banyaknya_submenu2 > 0)
 																{
-																echo"<ul>";
+																/*echo"<ul>";
 																	while($sub_menu2=mysql_fetch_array($cek_submenu2))
 																			{
 																			echo"<li>";
@@ -96,7 +96,7 @@
 																					
 																					echo"</li>";
 																					}
-																			echo"</ul>";
+																			echo"</ul>"; */
 																}
 														echo"</li>";
 														}

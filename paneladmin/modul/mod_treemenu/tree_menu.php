@@ -12,14 +12,14 @@ $(function() {
 		var del_id = element.attr("id");
 		//Built a url to send
 		var info = 'id=' + del_id;
-		// alert (info);
 		if(confirm("Sure you want to remove this article from Menu?"))
 		{
 			$.ajax({
 				type: "GET",
 				url: "modul/mod_treemenu/act/delete.php",
 				data: info,
-				success: function() {
+				success: function(dat) {
+				
 									$(this).parents(".record_delete").animate({ backgroundColor: "#fbc7c7" }, "fast")
 			.animate({ opacity: "hide" }, "slow");
 			location.reload();
@@ -292,6 +292,7 @@ switch($_GET[act]){
 		break;
 		case "edit_menu_sm1":
 				include"edit_form/edit_menu2.php";
+				//echo "BAAA";
 		break;
 		
 		

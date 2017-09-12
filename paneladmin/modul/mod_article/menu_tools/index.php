@@ -70,7 +70,7 @@ function alert_id()
 			<option value="<?php echo $rows['id_menu'];?>"> <?php echo $rows['menu_name'];?></option>
 		<?php
 		}?>
-		</select>	
+		</select>	<br></br>
 </form>
 	
 		<div id="show_sub_categories" >

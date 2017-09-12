@@ -110,7 +110,7 @@ case "tambah":
 				</div>
 							<input type='hidden' name='gen_code_article' id='gen_code_article' value='$gen_code' />
 							<input type='hidden' name='username' id='username' value='$_SESSION[namauser]' />
-							<input type='text' name='id_menu' id='result' style='display:block;'>
+							<input type='hidden' name='id_menu' id='result' style='display:block;'>
 						<div class='row-form clearfix'>
 							<div class='span3'>Menu Posisi:</div>
 							<div class='span5'>";

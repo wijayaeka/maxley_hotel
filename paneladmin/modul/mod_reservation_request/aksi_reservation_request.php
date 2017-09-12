@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 
 include "../../config/connect.php";
 $page=$_GET['page'];

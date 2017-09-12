@@ -112,9 +112,10 @@ $(document).ready(function(){
 	   <div id="panel">
 		<ul>
 			<?php $query_float = mysql_query("select * from halaman_statis");
+			$nomer = 1;
 					while($x1 = mysql_fetch_array($query_float))
 						{
-							$nomer ++;
+							
 								echo "<li><a href='promo-$x1[link_hal_statis].html' style='color:red; '>$x1[nama_hal_statis]</a></li>";
 						}
 			
